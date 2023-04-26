@@ -1,0 +1,85 @@
+{%include 'admin/cabecera.html'%}
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header">
+                    Datos del libro
+                </div>
+                <div class="card-body">
+                    
+                    <form action="/admin/arte/guardar" method="post" enctype="multipart/form-data">
+                        
+                        <div class="mb-3">
+                          <label for="txtNombre" class="form-label">Nombre:</label>
+                          <input type="text"
+                            class="form-control" name="txtNombre" id="txtNombre" aria-describedby="helpId" placeholder="Escriba el nombre del libro: ">
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="txtImagen" class="form-label">Imagen</label>
+                          <input type="file"
+                            class="form-control" name="txtImagen" id="txtImagen" aria-describedby="helpId" placeholder="Seleccione la Imagen.">
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="txtURL" class="form-label">URL Descarga</label>
+                          <input type="text"
+                            class="form-control" name="txtURL" id="txtURL" aria-describedby="helpId" placeholder="Escriba la URL de descarga:">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Agregar</button>
+                    
+                    </form>
+
+                </div>
+                <div class="card-footer text-muted">
+                    Footer
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="table-responsive">
+                
+                <table class="table table-primary table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">URL</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for listarte in arte %}
+                        <tr>
+                            <td>{{ listarte[0] }}</td>
+                            <td>{{ listarte[1] }}</td>
+                            <td>
+                                <img width='60' src="/img/{{ listarte[2] }}" class="img-fluid rounded-top" alt="">
+                            </td>
+                            <td>
+                                <a name="" id="" class="btn btn-success" href="{{ listarte[3] }}" role="button">Link Descarga</a>
+                                  
+                            </td>
+                            <td>
+                                <form action="/admin/arte/borrar" method="post">
+                                    <input value="{{ listarte[0] }}" type="hidden" name="txtID" id="txtID">
+                                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                                </form>
+                            </td>
+
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+            
+            
+        </div>
+        
+    </div>
+</div>
+
+{%include 'admin/pie.html'%}

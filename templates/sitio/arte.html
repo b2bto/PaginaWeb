@@ -1,0 +1,19 @@
+{% include 'sitio/cabecera.html'%}
+    <h1>Esta es la seccion de Arte</h1>
+    <br/>
+    <div class="row">
+        {% for listarte in arte %}
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="/img/{{listarte[2]}}" alt="Title">
+                <div class="card-body">
+                    <h4 class="card-title">{{listarte[1]}}</h4>
+                    <p class="card-text">
+                        <a name="" id="" class="btn btn-info" href="{{listarte[3]}}" role="button">Descarga</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% include 'sitio/pie.html'%}

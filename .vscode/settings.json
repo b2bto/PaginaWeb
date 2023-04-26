@@ -1,0 +1,27 @@
+{
+    "workbench.colorTheme": "Monokai",
+    "workbench.iconTheme": "vs-minimal",
+    "dotnet.help.firstView": "gettingStarted",
+    "workbench.productIconTheme": "macos-modern",
+    "workbench.editorAssociations": {
+        "*.icon": "default"
+    },
+    "terminal.integrated.inheritEnv": false,
+    "settingsSync.ignoredSettings": [
+        "-php.validate.executablePath"
+    ],
+    "php.debug.executablePath": "",
+    "php.validate.executablePath": "",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "editor.renderControlCharacters": false,
+    "editor.wordWrap": "on",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.fontSize": 20,
+    "files.autoSave": "afterDelay",
+    "editor.cursorStyle": "line-thin",
+    "editor.fontLigatures": false
+}
